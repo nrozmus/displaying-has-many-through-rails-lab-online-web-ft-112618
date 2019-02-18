@@ -1,0 +1,11 @@
+<h3>Appointment</h3>
+
+<label for="">Date & time:</label>
+<%= @appointment.appointment_datetime.strftime("%A, %B %d, %Y")%>
+
+
+<label for="">Patient</label>
+<%= link_to Patient.find_by_id(@appointment.patient_id).name, patient_path(Patient.find_by_id(@appointment.patient_id))  %>
+
+<label for="">Doctor</label>
+<%= link_to Doctor.find_by_id(@appointment.doctor_id).name, doctor_path(Doctor.find_by_id(@appointment.doctor_id))  %>
